@@ -1,6 +1,6 @@
 # Social Media REST API
 
-**Studente:** Gabriele Moschella  
+**Student:** Gabriele Moschella  
 **Project Type:** REST API  
 **Framework used:** Django REST Framework
 
@@ -78,7 +78,7 @@ the database already contains sample data (Demo Data), including posts, comments
 ---
 
 ## Online deployment link
-**URL:** http://http.cat/404
+**URL:** https://social-api-project-5yqu.onrender.com
 
 ---
 
