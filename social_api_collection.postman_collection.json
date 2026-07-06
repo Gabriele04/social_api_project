@@ -1,0 +1,984 @@
+{
+  "info": {
+    "_postman_id": "5623f679-b120-49cb-ac41-07a03a06e181",
+    "name": "social_api_collection",
+    "description": "### Welcome to Postman! This is your first collection.\n\nCollections are your starting point for building and testing APIs. You can use this one to:\n\n• Group related requests  \n• Test your API in real-world scenarios  \n• Document and share your requests\n\nUpdate the name and overview whenever you’re ready to make it yours.\n\n[Learn more about Postman Collections.](https://learning.postman.com/docs/collections/collections-overview/)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "56419033",
+    "_collection_link": "https://go.postman.co/collection/56419033-5623f679-b120-49cb-ac41-07a03a06e181?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "AUTH & USERS",
+      "item": [
+        {
+          "name": "Signup",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"username\": \"user\",\r\n    \"password\": \"password\",\r\n    \"email\": \"\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://social-api-project-5yqu.onrender.com/api/auth/signup/",
+              "protocol": "https",
+              "host": [
+                "social-api-project-5yqu",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "signup",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Login Moderator Demo",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code === 200) {\r",
+                  "    var jsonData = pm.response.json();\r",
+                  "    if (jsonData.access) {\r",
+                  "        pm.environment.set(\"mod_demo_access_token\", jsonData.access);\r",
+                  "    }\r",
+                  "    if (jsonData.refresh) {\r",
+                  "        pm.environment.set(\"mod_demo_refresh_token\", jsonData.refresh);\r",
+                  "    }\r",
+                  "}"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"username\": \"mod_demo\",\r\n    \"password\": \"mod12345\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://social-api-project-5yqu.onrender.com/api/auth/login/",
+              "protocol": "https",
+              "host": [
+                "social-api-project-5yqu",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "login",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Login User Demo",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code === 200) {\r",
+                  "    var jsonData = pm.response.json();\r",
+                  "    if (jsonData.access) {\r",
+                  "        pm.environment.set(\"user_demo_access_token\", jsonData.access);\r",
+                  "    }\r",
+                  "    if (jsonData.refresh) {\r",
+                  "        pm.environment.set(\"user_demo_refresh_token\", jsonData.refresh);\r",
+                  "    }\r",
+                  "}"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"username\": \"user_demo\",\r\n    \"password\": \"user12345\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://social-api-project-5yqu.onrender.com/api/auth/login/",
+              "protocol": "https",
+              "host": [
+                "social-api-project-5yqu",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "login",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"username\": \"user\",\r\n    \"password\": \"password\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://social-api-project-5yqu.onrender.com/api/auth/login/",
+              "protocol": "https",
+              "host": [
+                "social-api-project-5yqu",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "login",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Refresh Mod Demo Token",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code === 200) {\r",
+                  "    var jsonData = pm.response.json();\r",
+                  "    if (jsonData.access) {\r",
+                  "        pm.environment.set(\"mod_demo_access_token\", jsonData.access);\r",
+                  "    }\r",
+                  "}"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"refresh\": \"{{mod_demo_refresh_token}}\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://social-api-project-5yqu.onrender.com/api/auth/token/refresh/",
+              "protocol": "https",
+              "host": [
+                "social-api-project-5yqu",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "token",
+                "refresh",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Refresh User Demo Token",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code === 200) {\r",
+                  "    var jsonData = pm.response.json();\r",
+                  "    if (jsonData.access) {\r",
+                  "        pm.environment.set(\"user_demo_access_token\", jsonData.access);\r",
+                  "    }\r",
+                  "}"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"refresh\": \"{{user_demo_refresh_token}}\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://social-api-project-5yqu.onrender.com/api/auth/token/refresh/",
+              "protocol": "https",
+              "host": [
+                "social-api-project-5yqu",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "token",
+                "refresh",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Refresh Token",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"refresh\": \"\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://social-api-project-5yqu.onrender.com/api/auth/token/refresh/",
+              "protocol": "https",
+              "host": [
+                "social-api-project-5yqu",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "token",
+                "refresh",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get User Profile",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://social-api-project-5yqu.onrender.com/api/auth/user2_demo",
+              "protocol": "https",
+              "host": [
+                "social-api-project-5yqu",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "user2_demo"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Profile",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"bio\": \"Biography of the user2\",\r\n    \"occupation\": \"Worker\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://social-api-project-5yqu.onrender.com/api/auth/update/",
+              "protocol": "https",
+              "host": [
+                "social-api-project-5yqu",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "update",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Follow User",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "https://social-api-project-5yqu.onrender.com/api/auth/users/5/follow/",
+              "protocol": "https",
+              "host": [
+                "social-api-project-5yqu",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "users",
+                "5",
+                "follow",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Block user",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "https://social-api-project-5yqu.onrender.com/api/auth/users/2/block/",
+              "protocol": "https",
+              "host": [
+                "social-api-project-5yqu",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "users",
+                "2",
+                "block",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Logout",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"refresh\": \"\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://social-api-project-5yqu.onrender.com/api/auth/logout/",
+              "protocol": "https",
+              "host": [
+                "social-api-project-5yqu",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "logout",
+                ""
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "POSTS",
+      "item": [
+        {
+          "name": "Create Post",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\": \"Gatti sensa cibo\",\r\n    \"description\": \"Gatti con ciotola vuota\",\r\n    \"media_url\": \"https://http.cat/status/204\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://social-api-project-5yqu.onrender.com/api/posts/",
+              "protocol": "https",
+              "host": [
+                "social-api-project-5yqu",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "posts",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Post",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"description\": \"a\",\r\n    \"title\": \"a\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://social-api-project-5yqu.onrender.com/api/posts/12/",
+              "protocol": "https",
+              "host": [
+                "social-api-project-5yqu",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "posts",
+                "12",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Post",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "https://social-api-project-5yqu.onrender.com/api/posts/1/",
+              "protocol": "https",
+              "host": [
+                "social-api-project-5yqu",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "posts",
+                "1",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Post Detail",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://social-api-project-5yqu.onrender.com/api/posts/1/",
+              "protocol": "https",
+              "host": [
+                "social-api-project-5yqu",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "posts",
+                "1",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "General Feed",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://social-api-project-5yqu.onrender.com/api/posts/",
+              "protocol": "https",
+              "host": [
+                "social-api-project-5yqu",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "posts",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Custom Feed",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://social-api-project-5yqu.onrender.com/api/posts/feed/",
+              "protocol": "https",
+              "host": [
+                "social-api-project-5yqu",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "posts",
+                "feed",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Toogle Like",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "https://social-api-project-5yqu.onrender.com/api/posts/1/like/",
+              "protocol": "https",
+              "host": [
+                "social-api-project-5yqu",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "posts",
+                "1",
+                "like",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Comment",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"body\": \"Wow, bell gattone!\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://social-api-project-5yqu.onrender.com/api/posts/1/comment/",
+              "protocol": "https",
+              "host": [
+                "social-api-project-5yqu",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "posts",
+                "1",
+                "comment",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Comment",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"body\": \"commentone sgravato2\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://social-api-project-5yqu.onrender.com/api/posts/1/comment/8/",
+              "protocol": "https",
+              "host": [
+                "social-api-project-5yqu",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "posts",
+                "1",
+                "comment",
+                "8",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete comment",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "https://social-api-project-5yqu.onrender.com/api/posts/1/comment/1/",
+              "protocol": "https",
+              "host": [
+                "social-api-project-5yqu",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "posts",
+                "1",
+                "comment",
+                "1",
+                ""
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "CHATS",
+      "item": [
+        {
+          "name": "Send Message",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"body\": \"Ecco la mia risposta https://http.cat/status/418\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://social-api-project-5yqu.onrender.com/api/chats/send/5/",
+              "protocol": "https",
+              "host": [
+                "social-api-project-5yqu",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "chats",
+                "send",
+                "5",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "History Chat",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://social-api-project-5yqu.onrender.com/api/chats/history/5/",
+              "protocol": "https",
+              "host": [
+                "social-api-project-5yqu",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "chats",
+                "history",
+                "5",
+                ""
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ]
+}
