@@ -54,9 +54,6 @@ It also includes a private chat between users and a sistem of privileges based o
 The API will be available at: `http://127.0.0.1:8000/`
 
 ## Database and demo data
-This project includes the database file SQLite preconfigured: `db.sqlite3`
-
-## Database and demo data
 
 The project includes a preconfigured SQLite database file: **db.sqlite3**.
 the database already contains sample data (Demo Data), including posts, comments, follow relationships, and chat history, for easy testing.
