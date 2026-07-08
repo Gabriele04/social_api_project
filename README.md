@@ -8,8 +8,6 @@ This application implements the backend (RESTful API) of a social network. It al
 authenticate by JWT, publish contents (posts), interact via likes and comments and with other users following them. 
 It also includes a private chat between users and a sistem of privileges based on the role of the user.
 
----
-
 ## Features
 
 ### Guest (Unauthenticated)
@@ -30,8 +28,6 @@ It also includes a private chat between users and a sistem of privileges based o
 * **All the features of the standard User.**
 * **Content moderation:** Deletion of any post or comment in the system.
 * **User management (Ban):** Blocking/unlocking user accounts.
-
----
 
 ## Local installation instructions
 
@@ -60,8 +56,6 @@ The API will be available at: `http://127.0.0.1:8000/`
 ## Database and demo data
 This project includes the database file SQLite preconfigured: `db.sqlite3`
 
----
-
 ## Database and demo data
 
 The project includes a preconfigured SQLite database file: **db.sqlite3**.
@@ -75,12 +69,8 @@ the database already contains sample data (Demo Data), including posts, comments
 | `user_demo`  | `user12345`  | **User**      | Standard user with preloaded data and posts.       |
 | `user2_demo` | `user212345` | **User**      | Standard user with preloaded data and posts.       |
 
----
-
 ## Online deployment link
 **URL:** https://social-api-project-5yqu.onrender.com
-
----
 
 ## Main endpoints table
 
@@ -110,10 +100,6 @@ the database already contains sample data (Demo Data), including posts, comments
 | **DELETE** | **Delete Comment**   | `/api/posts/1/comment/1/`   | Yes  | Author | *N/A*                                                                                         | *N/A*                                                                                                                                                                                          | Delete a comment                                     |
 | **POST**   | **Send Message**     | `/api/chats/send/1/`        | Yes  | Any    | `{ "body": "..."}`                                                                            | `{ "id": 1, "sender": 1, "sender_username": "user", "receiver": 2, "receiver_username": "user2", "body": "...", "sent_at": "..." }`                                                            | Send a message to a user                             |
 | **GET**    | **History Chat**     | `/api/chats/history/1/`     | Yes  | Any    | *N/A*                                                                                         | `[ { "id": 3, "sender": 5, "sender_username": "user_demo", "receiver": 8, "receiver_username": "user2", "body": "messaggione", "sent_at": "2026-07-06T14:40:09.253586Z" } ..]`                 | Retrieve the message history with a user             |
-
-
-
----
 
 ## Testing workflow and scenario (Postman)
 
