@@ -2,7 +2,6 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 
 class SocialUser(AbstractUser):
-    #ha già username password email da Abstract User
     ROLE = (('user', 'Social User'), ('moderator', 'Moderator'),)
 
     role = models.CharField(max_length=10, choices=ROLE, default='user')
